@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* RATING CSS, LÆS MERE HER: https://css-tricks.com/star-ratings/ */
+/* Container til stjerner med omvendt tekstretning, da man ikke i css kan vælge elementer der ligger før det aktuelle, men kun efter */
+.rating {
+	unicode-bidi:bidi-override;
+	direction:rtl;
+	font-size:2em;
+}
+
+/* Element til stjerne, her sætter vi styling af skrift */ 
+.rating > .star {
+	font-family:FontAwesome;
+	font-weight:normal;
+	font-style:normal;
+	text-decoration:none;
+}
+
+/* Placerer ikon før vores element med klassen star */
+.rating > .star:before {
+	content:"\f006"; /* fa-star-o Icons CSS values: http://astronautweb.co/snippet/font-awesome/ */
+	padding-right:0.325em;
+	color:#9E9055;
+}
+
+/* Skifter musepil ud med hånd for at indikere man skal vælge noget og fjerner evt. underline ved hover */
+.rating > a.star:hover {
+	cursor:pointer;
+}
+
+/* Mørkere gul stjerne til visning af aktuel rating */
+.rating > .star.current-rating:before {
+	content:"\f005"; /* fa-star */
+	color:#9E9055;
+}
+
+/* Gul stjerne der vises ved hover på elementer i rating med klassen star og my-rating. Symbol: ~ bruges til at indikere styling skal bruges fra det aktuelle element vi holder musen over og alle før (Uden omvendt tekstretning ville det være alle stjerner efter der blev gule) */
+.rating > a.star:hover:before,
+.rating > a.star:hover ~ a.star:before,
+.rating > .star.my-rating:before {
+	content:"\f005"; /* fa-star */
+	color:#E3CF7A;
+}

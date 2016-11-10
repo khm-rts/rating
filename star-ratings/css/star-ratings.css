@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* RATING CSS, LÆS MERE HER: https://css-tricks.com/star-ratings/ */
+/* Container til stjerner med omvendt tekstretning, da man ikke i css kan vælge elementer der ligger før det aktuelle, men kun efter */
+.rating {
+	unicode-bidi:bidi-override;
+	direction:rtl;
+}
+
+/* Element til stjerne */
+.rating > .star {}
+
+/* Placerer ikon før vores element med klassen star */
+.rating > .star:before {
+	content: url(../img/star-empty.png);
+}
+
+/* Skifter musepil ud med hånd for at indikere man skal vælge noget og fjerner evt. underline ved hover */
+.rating > a.star:hover {
+	cursor:pointer;
+}
+
+/* Gul stjerne der vises ved hover på elementer i rating med klassen star og active. Symbol: ~ bruges til at indikere styling skal bruges fra det aktuelle element vi holder musen over og alle før (Uden omvendt tekstretning ville det være alle stjerner efter der blev gule) */
+.rating > a.star:hover:before,
+.rating > a.star:hover ~ a.star:before,
+.rating > .star.active:before {
+	content: url(../img/star-filled.png);
+}

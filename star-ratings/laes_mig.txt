@@ -1,0 +1,3 @@
+Tag kode fra rating.html/rating.php og tilføj til din side, hvor du vil have stjerner til rating.
+
+Include Font Awesomes CSS og herefter rating.css på siden hvor du vil have vist rating/stjerner.

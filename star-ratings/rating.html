@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rating Demo</title>
+    <link rel="stylesheet" type="text/css" href="css/star-ratings.css">
+</head>
+
+<body>
+	<h1>Rating - Demo</h1>
+	<h2>Visning af aktuel bedømmelse uden mulighed for at bedømme</h2>
+	<!-- Eksempel med visning af aktuel rating. Elementet med klassen rating har omvendt tekstretning, så de 3 sidste stjerner med klassen current-rating, er de 3 første der vises -->
+	<span class="rating">
+    	<span class="star"></span>
+        <span class="star"></span>
+        <span class="star active"></span>
+        <span class="star active"></span>
+        <span class="star active"></span>
+    </span>
+    
+    <hr>
+
+    <h2>Visning af egen bedømmelse med mulighed for at rate</h2>
+    <!-- Eksempel med visning af noget jeg har rated. Elementet med klassen rating har omvendt tekstretning, så den sidste stjerne med klassen my-rating, er den første der vises -->
+    <span class="rating">
+    	<a href="rating.html?id=1&rate=5" class="star"></a>
+        <a href="rating.html?id=1&rate=4" class="star"></a>
+        <a href="rating.html?id=1&rate=3" class="star"></a>
+        <a href="rating.html?id=1&rate=2" class="star"></a>
+        <a href="rating.html?id=1&rate=1" class="star active"></a>
+	</span>
+</body>
+</html>
